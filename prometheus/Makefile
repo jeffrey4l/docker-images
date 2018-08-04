@@ -15,4 +15,8 @@ build:
 	docker build ${BUILD_ARGS} ${_BUILD_ARGS} -t $(IMAGE):$(VERSION) .
 
 push: build
-	docker push $(IMAGE):$(VERSION)
+	echo docker push $(IMAGE):$(VERSION)
+ifdef LATEST
+	echo docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
+	echo docker push $(IMAGE):latest
+endif
