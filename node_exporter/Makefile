@@ -19,6 +19,6 @@ build:
 push: build
 	docker push $(IMAGE):$(VERSION)
 ifdef LATEST
-	echo docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
-	echo docker push $(IMAGE):latest
+	docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
+	docker push $(IMAGE):latest
 endif
