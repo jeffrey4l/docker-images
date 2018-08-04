@@ -1,7 +1,6 @@
-PROXY=http://172.17.0.1:8185
-IMAGE=prometheus
+IMAGE=jeffrey4l/prometheus
 VERSION=2.3.1
-BUILD_ARGS=
+BUILD_ARGS=--build-arg PROMETHEUS_VERSION=$(VERSION)
 
 ifdef http_proxy
 	_BUILD_ARGS+=--build-arg=http_proxy:${http_proxy}
@@ -14,3 +13,6 @@ endif
 build:
 
 	docker build ${BUILD_ARGS} ${_BUILD_ARGS} -t $(IMAGE):$(VERSION) .
+
+push: build
+	docker push $(IMAGE):$(VERSION)

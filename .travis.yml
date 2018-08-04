@@ -9,5 +9,12 @@ env:
   - APP=node_exporter VERSION=0.16.0
   - APP=node_exporter VERSION=0.15.2
   - APP=node_exporter VERSION=0.14.0
+  - APP=prometheus VERSION=2.3.2
+  - APP=prometheus VERSION=2.3.1
+  - APP=prometheus VERSION=2.3.0
+  - APP=prometheus VERSION=2.2.1
+  - APP=prometheus VERSION=2.2.0
+  - APP=prometheus VERSION=2.1.0
+  - APP=prometheus VERSION=2.0.0
 script:
   - bash -x .travis/build.sh
