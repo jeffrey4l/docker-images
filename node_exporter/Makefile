@@ -1,4 +1,4 @@
-IMAGE=node-exporter
+IMAGE=jeffrey4l/node-exporter
 VERSION=0.16.0
 BUILD_ARGS=
 
@@ -15,3 +15,6 @@ build:
 	docker build \
 		--build-arg NODE_EXPORTER_VERSION=${VERSION} \
 		${BUILD_ARGS} ${_BUILD_ARGS} -t $(IMAGE):$(VERSION) .
+
+push: build
+	docker push $(IMAGE):$(VERSION)
