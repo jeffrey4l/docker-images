@@ -4,5 +4,10 @@ sudo: required
 
 services:
   - docker
+
+env:
+  - APP=node_exporter VERSION=0.16.0
+  - APP=node_exporter VERSION=0.15.2
+  - APP=node_exporter VERSION=0.14.0
 script:
-  - bash -x build.sh
+  - bash -x .travis/build.sh
