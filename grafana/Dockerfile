@@ -1,7 +1,7 @@
 FROM centos:7
 
-ARG TINI_VER=v0.18.0
-ARG GRAFANA_VER=5.2.1
+ARG TINI_VERSION=v0.18.0
+ARG GRAFANA_VERSION=5.2.1
 
 COPY grafana.repo /etc/yum.repos.d/grafana.repo
 

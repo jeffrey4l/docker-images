@@ -11,5 +11,14 @@ endif
 .PHONY:build
 build:
 
-	docker build \
+	docker build --build-arg GRAFANA_VERSION=$(VERSION) \
 		${_BUILD_ARGS} -t $(IMAGE):$(VERSION) .
+
+.PHONY:push
+push: build
+	docker push $(IMAGE):$(VERSION)
+
+ifdef LATEST
+	docker tag $(IMAGE):$(VERSION) $(IMAGE):latest
+	docker push $(IMAGE):latest
+endif

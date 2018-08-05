@@ -16,5 +16,6 @@ env:
   - APP=prometheus VERSION=2.2.0
   - APP=prometheus VERSION=2.1.0
   - APP=prometheus VERSION=2.0.0
+  - APP=grafna VERSION=5.2.1
 script:
   - bash -x .travis/build.sh
